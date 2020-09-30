@@ -88,6 +88,17 @@ while x==1:
             speak("Sorry sir, could not send the email")
     elif 'sachin bhati' in query:
         speak("Sachin Bhati is the owner of AgriFlona group and an open-minded person. He is into his own world of creation and in search for creatin somethin new")
+    elif 'remember that' in query:
+            speak("what should i remember sir")
+            rememberMessage = takeCommand()
+            speak("you said me to remember"+rememberMessage)
+            remember = open('data.txt', 'w')
+            remember.write(rememberMessage)
+            remember.close()
+
+    elif 'do you remember anything' in query:
+            remember = open('data.txt', 'r')
+            speak("you said me to remember that" + remember.read())
     elif 'go to sleep' in query:
         speak("Goodbye sir, Have a nice day")
         x=0
